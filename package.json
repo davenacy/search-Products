@@ -1,0 +1,18 @@
+{
+  "name": "searchProducts",
+  "version": "0.0.1",
+  "main": "searchProducts.js",
+  "description": "P360 searchProducts implementation.",
+  "private": true,
+  "author": {
+    "name": "Infoverity, LLC"
+  },
+  "dependencies": {
+    "node-rest-client": "3.1.0"
+  },
+  "scripts": {"start": "node main.js",
+    "zip": "rm -f searchProducts.zip; zip -q -r searchProducts.zip searchProducts.js package.json node_modules",
+    "update": "wsk -i action update searchProducts --kind nodejs:6 --web true searchProducts.zip",
+    "deploy": "npm run zip; npm run update"
+  }
+}
